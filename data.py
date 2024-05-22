@@ -221,9 +221,7 @@ class PolyphemusDataset(Dataset):
         sample_path = os.path.join(self.dir, self.files[idx].name)
         data = np.load(sample_path)
         c_tensor = torch.tensor(data["c_tensor"], dtype=torch.long)
-        print(c_tensor.shape)
         s_tensor = torch.tensor(data["s_tensor"], dtype=torch.bool)
-        print(s_tensor.shape)
 
         # From (n_tracks x n_timesteps x ...)
         # to (n_bars x n_tracks x n_timesteps x ...)
